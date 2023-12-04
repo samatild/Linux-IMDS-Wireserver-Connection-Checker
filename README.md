@@ -13,7 +13,7 @@ Just follow the steps below to run the script:
 
 ```bash
 # Download the script
-curl -O https://raw.githubusercontent.com/azure/azure-linux-imds-wireserver-connectivity-checker/master/imds-wireserver-connectivity-checker.sh
+curl -O https://raw.githubusercontent.com/samatild/linuximdswireserver-connectionchecker/main/imds-wireserver-connectivity-checker.sh.sh
 
 # Make the script executable
 chmod +x imds-wireserver-connectivity-checker.sh
