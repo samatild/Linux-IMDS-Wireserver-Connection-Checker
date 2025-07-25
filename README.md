@@ -2,42 +2,30 @@
 # Linux IMDS/Wireserver Connectivity Checker
 
 ## Overview
-
-This repository provides a robust Bash script to check the connectivity status between an Azure Linux VM and Azure's Instance Metadata Service (IMDS) and Wireserver. The script is designed for troubleshooting and diagnostics, helping you quickly identify network or firewall issues that may affect Azure VM functionality.
-
-- **No data is collected or changed on your machine.**
-- **No ping/ICMP is used**—all checks are performed using TCP, UDP, and HTTP.
-- **No additional packages required**—uses standard Linux tools.
-- **All output is printed directly to the shell.**
+- Bash script to check Azure Linux VM connectivity to IMDS and Wireserver.
+- No data is collected or changed.
+- No ping/ICMP used; all output is printed to the shell.
 
 ## Features
-
-- Checks TCP and UDP connectivity to IMDS and Wireserver on ports 80 and 443
-- Verifies IMDS HTTP API availability
-- Analyzes firewall (iptables) rules for relevant ports and IPs
-- Displays network interface and routing information for Azure endpoints
+- TCP/UDP connectivity checks (ports 80, 443) for IMDS and Wireserver
+- IMDS HTTP API test
+- Firewall (iptables) and network diagnostics
 - Color-coded, human-friendly output
-- No root required for most checks (firewall checks may need sudo)
-- No dependencies on ping/ICMP
 
 ## Prerequisites
-
-- Linux VM (tested on Ubuntu, Debian, CentOS, RHEL)
-- Standard utilities: `nc`, `curl`, `iptables`
+- Linux VM with `nc`, `curl`, `iptables`
 - (Optional) `sudo` for firewall checks
 
 ## Usage
-   ```bash
-   # Download the script:
-   curl -O https://raw.githubusercontent.com/samatild/linuximdswireserver-connectionchecker/main/imds-wireserver-connectivity-checker.sh
 
-   # Make the script executable:
-   chmod +x imds-wireserver-connectivity-checker.sh
+    # Download the script:
+    curl -O https://raw.githubusercontent.com/samatild/linuximdswireserver-connectionchecker/main/imds-wireserver-connectivity-checker.sh
 
-   # Run the script:
-   ./imds-wireserver-connectivity-checker.sh
+    # Make the script executable:
+    chmod +x imds-wireserver-connectivity-checker.sh
 
-   ``` 
+    # Run the script:
+    ./imds-wireserver-connectivity-checker.sh
 
    > For firewall checks, you may be prompted for your password to run `sudo`.
 
@@ -64,12 +52,12 @@ This repository provides a robust Bash script to check the connectivity status b
 
 ## Troubleshooting
 
-- **Missing tools:** If you see a message about missing tools, install them using your package manager. For example:
+- **Missing tools:** Install with your package manager, e.g.:
   ```bash
   sudo apt-get install netcat-openbsd curl iptables
   ```
-- **Firewall checks require sudo:** If you run as a non-root user, you may be prompted for your password.
-- **Script exits early:** Ensure you are using the latest version of the script. If you modified the script, make sure all test sections are present.
+- **Firewall checks require sudo:** You may be prompted for your password.
+- **Script exits early:** Use the latest script version and ensure all test sections are present.
 
 ## Reference Documents
 
