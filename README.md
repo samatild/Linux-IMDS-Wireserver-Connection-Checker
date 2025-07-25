@@ -36,13 +36,14 @@ This repository provides a robust Bash script to check the connectivity status b
 
    # Run the script:
    ./imds-wireserver-connectivity-checker.sh
-```<
+
+   ``` 
 
    > For firewall checks, you may be prompted for your password to run `sudo`.
 
 ## Example Output
 
-```
+```bash
 === IMDS AND WIRESERVER CONNECTIVITY CHECKER ===
 ℹ Script is running as non-root user (some checks may be limited)
 
